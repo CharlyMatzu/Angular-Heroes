@@ -5,13 +5,15 @@
 
 <div class="card-columns">
 
-    <div class="card fadeIn fast" *ngFor="let heroe of heroes; let i = index">
+    <!-- <div class="card fadeIn fast" *ngFor="let heroe of heroes; let i = index">
       <img class="card-img-top" [src]="heroe.img" [alt]="heroe.img">
       <div class="card-body">
         <h4 class="text-center">{{ heroe.nombre }}</h4>
         <p class="card-text">{{ heroe.bio }}</p>
         <button (click)="verHeroe(heroe.nombre)" class="btn btn-outline-primary btn-block">Ver más...</button>
       </div>
-    </div>
+    </div> -->
+
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
 
 </div>
